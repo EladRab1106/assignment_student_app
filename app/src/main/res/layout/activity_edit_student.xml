@@ -102,4 +102,32 @@
         tools:layout_editor_absoluteX="108dp"
         tools:layout_editor_absoluteY="395dp" />
 
+    <Button
+        android:id="@+id/activity_edit_student_cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cancel"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <Button
+        android:id="@+id/activity_edit_student_delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="delete"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/activity_edit_student_save_button"
+        app:layout_constraintStart_toEndOf="@+id/activity_edit_student_cancel_button" />
+
+    <Button
+        android:id="@+id/activity_edit_student_save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="save"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="287dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
