@@ -67,39 +67,13 @@
         app:layout_constraintTop_toBottomOf="@+id/activity_new_student_address_text_view" />
 
     <TextView
-        android:id="@+id/activity_new_student_student_name_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="224dp" />
-
-    <TextView
-        android:id="@+id/activity_new_student_student_id_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="264dp" />
-
-    <TextView
-        android:id="@+id/activity_new_student_student_phone_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="303dp" />
-
-    <TextView
-        android:id="@+id/activity_new_student_student_address_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="343dp" />
-
-    <TextView
         android:id="@+id/activity_new_student_student_is_check_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="396dp" />
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_new_student_check_box"
+        app:layout_constraintTop_toBottomOf="@+id/activity_new_student_address_plain" />
 
     <Button
         android:id="@+id/activity_new_student_cancel_button"
@@ -120,4 +94,50 @@
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/activity_new_student_name_plain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/activity_new_student_name_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/activity_new_student_image_view" />
+
+    <EditText
+        android:id="@+id/activity_new_student_id_plain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.289"
+        app:layout_constraintStart_toEndOf="@+id/activity_new_student_id_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/activity_new_student_name_plain" />
+
+    <EditText
+        android:id="@+id/activity_new_student_phone_plain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toEndOf="@+id/activity_new_student_phone_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/activity_new_student_id_plain" />
+
+    <EditText
+        android:id="@+id/activity_new_student_address_plain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintStart_toEndOf="@+id/activity_new_student_address_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/activity_new_student_phone_plain" />
 </androidx.constraintlayout.widget.ConstraintLayout>

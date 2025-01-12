@@ -8,6 +8,17 @@
     android:layout_height="match_parent"
     tools:context=".EditStudent">
 
+    <EditText
+        android:id="@+id/activity_edit_student_address_plain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintStart_toEndOf="@+id/activity_edit_student_address_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/activity_edit_student_phone_plain" />
+
     <ImageView
         android:id="@+id/activity_edit_student_image_view"
         android:layout_width="123dp"
@@ -67,49 +78,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_edit_student_address_text_view" />
 
-    <TextView
-        android:id="@+id/activity_edit_student_student_name_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="137dp"
-        tools:layout_editor_absoluteY="225dp" />
-
-    <TextView
-        android:id="@+id/activity_edit_student_student_id_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="269dp" />
-
-    <TextView
-        android:id="@+id/activity_edit_student_student_phone_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="308dp" />
-
-    <TextView
-        android:id="@+id/activity_edit_student_student_address_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="346dp" />
-
-    <TextView
-        android:id="@+id/activity_edit_student_student_is_checked_check_box"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="395dp" />
-
     <Button
         android:id="@+id/activity_edit_student_cancel_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:text="cancel"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="20dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/activity_edit_student_delete_button"
@@ -125,9 +102,53 @@
         android:id="@+id/activity_edit_student_save_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
         android:text="save"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="287dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/activity_edit_student_name_plain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.398"
+        app:layout_constraintStart_toEndOf="@+id/activity_edit_student_name_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/activity_edit_student_image_view" />
+
+    <EditText
+        android:id="@+id/activity_edit_student_id_plain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toEndOf="@+id/activity_edit_student_id_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/activity_edit_student_name_plain" />
+
+    <EditText
+        android:id="@+id/activity_edit_student_phone_plain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.388"
+        app:layout_constraintStart_toEndOf="@+id/activity_edit_student_phone_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/activity_edit_student_id_plain" />
+
+    <TextView
+        android:id="@+id/activity_edit_student_is_check_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_edit_student_check_box"
+        app:layout_constraintTop_toBottomOf="@+id/activity_edit_student_address_plain" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
