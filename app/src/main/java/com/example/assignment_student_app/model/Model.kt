@@ -13,7 +13,9 @@ class Model private constructor(){
                 name = "Ben Shapiro $i",
                 id = i.toString(),
                 AvatarUrl = "",
-                isChecked = false
+                isChecked = false,
+                phone = "1234567890 $i",
+                address = "1234 Main St $i"
             )
             students.add(student)
         }

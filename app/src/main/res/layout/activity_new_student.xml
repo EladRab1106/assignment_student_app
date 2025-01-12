@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewStudent">
+
+    <ImageView
+        android:id="@+id/activity_new_student_image_view"
+        android:layout_width="123dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/man" />
+
+    <TextView
+        android:id="@+id/activity_new_student_name_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:text="name:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_new_student_image_view" />
+
+    <TextView
+        android:id="@+id/activity_new_student_id_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="id:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_new_student_name_text_view" />
+
+    <TextView
+        android:id="@+id/activity_new_student_phone_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="phone:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_new_student_id_text_view" />
+
+    <TextView
+        android:id="@+id/activity_new_student_address_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="address:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_new_student_phone_text_view" />
+
+    <CheckBox
+        android:id="@+id/activity_new_student_check_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_new_student_address_text_view" />
+
+    <TextView
+        android:id="@+id/activity_new_student_student_is_check_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_new_student_check_box"
+        app:layout_constraintTop_toBottomOf="@+id/activity_new_student_address_plain" />
+
+    <Button
+        android:id="@+id/activity_new_student_cancel_button"
+        android:layout_width="183dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="10dp"
+        android:text="cancel"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/activity_new_student_save_button"
+        android:layout_width="183dp"
+        android:layout_height="59dp"
+        android:layout_marginEnd="10dp"
+        android:text="save"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/activity_new_student_name_plain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/activity_new_student_name_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/activity_new_student_image_view" />
+
+    <EditText
+        android:id="@+id/activity_new_student_id_plain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.289"
+        app:layout_constraintStart_toEndOf="@+id/activity_new_student_id_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/activity_new_student_name_plain" />
+
+    <EditText
+        android:id="@+id/activity_new_student_phone_plain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toEndOf="@+id/activity_new_student_phone_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/activity_new_student_id_plain" />
+
+    <EditText
+        android:id="@+id/activity_new_student_address_plain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintStart_toEndOf="@+id/activity_new_student_address_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/activity_new_student_phone_plain" />
+</androidx.constraintlayout.widget.ConstraintLayout>
