@@ -38,6 +38,13 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
                 adapter.notifyDataSetChanged()
             }
         }
+        else if (requestCode == REQUEST_CODE_EDIT_STUDENT && resultCode == RESULT_OK) {
+            val student: Student? = data?.getParcelableExtra("updated_student")
+            student?.let {
+                val adapter = findViewById<RecyclerView>(R.id.students_list_activity_recycler_view).adapter as StudentsRecyclerAdapter
+                adapter.notifyDataSetChanged()
+            }
+        }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,7 +73,7 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
                 Log.d("TAG,","on student click name: ${student?.name}")
                 student?.let {
                     val intent=StudentDetails.newIntent(this@StudentsRecyclerViewActivity,student)
-                    startActivity(intent)
+                    startActivityForResult(intent, REQUEST_CODE_EDIT_STUDENT)
                 }
             }
         }

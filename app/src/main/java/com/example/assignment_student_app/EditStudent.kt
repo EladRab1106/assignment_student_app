@@ -23,6 +23,7 @@ class EditStudent : AppCompatActivity() {
     private var cancelButton: Button? = null
     private var saveButton: Button? = null
     private var deleteButton: Button? = null
+    private var oldId: String? = null
     companion object {
         fun newIntent(context: Context, student: Student): Intent {
             return Intent(context, EditStudent::class.java).apply {
@@ -45,22 +46,34 @@ class EditStudent : AppCompatActivity() {
             finish() // Exit if no student data is passed
             return
         }
+        oldId = student.id
         cancelButton = findViewById(R.id.activity_edit_student_cancel_button)
         saveButton = findViewById(R.id.activity_edit_student_save_button)
         deleteButton = findViewById(R.id.activity_edit_student_delete_button)
         cancelButton?.setOnClickListener{
             finish()
         }
-        saveButton?.setOnClickListener{
+        saveButton?.setOnClickListener {
+            // Update the student object with the new data
             student.name = nameTextView?.text.toString()
             student.id = idTextView?.text.toString()
             student.phone = phoneTextView?.text.toString()
             student.address = addressTextView?.text.toString()
             student.isChecked = checkBox?.isChecked ?: false
-            val intent= StudentDetails.newIntent(this,student)
-            startActivity(intent)
-            finish()
+
+            // Find the index of the student in Model.shared.students
+            val index = Model.shared.students.indexOfFirst { it.id == oldId }
+            if (index != -1) {
+                // Update the student in the list
+                Model.shared.students[index] = student
+            }
+
+            // Pass the updated student back to the previous activity
+            val resultIntent = Intent().apply { putExtra("new_student", student) }
+            setResult(RESULT_OK, resultIntent)
+            finish() // Close the activity
         }
+
         deleteButton?.setOnClickListener{
             Model.shared.students.remove(student)
             val intent = Intent(this, StudentsRecyclerViewActivity::class.java)
