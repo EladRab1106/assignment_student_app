@@ -22,7 +22,6 @@ interface onItemClickListener{
 class StudentsRecyclerViewActivity : AppCompatActivity() {
     companion object {
         const val REQUEST_CODE_NEW_STUDENT = 1001
-        const val REQUEST_CODE_EDIT_STUDENT = 1002
     }
     var students : MutableList<Student>?=null
     var plusButton: Button?=null
