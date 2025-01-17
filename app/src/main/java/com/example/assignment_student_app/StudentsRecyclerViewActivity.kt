@@ -22,6 +22,7 @@ interface onItemClickListener{
 class StudentsRecyclerViewActivity : AppCompatActivity() {
     companion object {
         const val REQUEST_CODE_NEW_STUDENT = 1001
+        const val REQUEST_CODE_EDIT_STUDENT = 1002
     }
     var students : MutableList<Student>?=null
     var plusButton: Button?=null
@@ -33,6 +34,13 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
             val student: Student? = data?.getParcelableExtra("new_student")
             student?.let {
                 students?.add(it)
+                val adapter = findViewById<RecyclerView>(R.id.students_list_activity_recycler_view).adapter as StudentsRecyclerAdapter
+                adapter.notifyDataSetChanged()
+            }
+        }
+        else if (requestCode == REQUEST_CODE_EDIT_STUDENT && resultCode == RESULT_OK) {
+            val student: Student? = data?.getParcelableExtra("updated_student")
+            student?.let {
                 val adapter = findViewById<RecyclerView>(R.id.students_list_activity_recycler_view).adapter as StudentsRecyclerAdapter
                 adapter.notifyDataSetChanged()
             }
@@ -65,7 +73,7 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
                 Log.d("TAG,","on student click name: ${student?.name}")
                 student?.let {
                     val intent=StudentDetails.newIntent(this@StudentsRecyclerViewActivity,student)
-                    startActivity(intent)
+                    startActivityForResult(intent, REQUEST_CODE_EDIT_STUDENT)
                 }
             }
         }

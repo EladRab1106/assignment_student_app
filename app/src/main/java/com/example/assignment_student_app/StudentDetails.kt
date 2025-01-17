@@ -51,11 +51,26 @@ class StudentDetails : AppCompatActivity() {
         editButton = findViewById(R.id.activity_student_details_edit_button)
         editButton?.setOnClickListener{
             val intent= EditStudent.newIntent(this,student)
-            startActivity(intent)
+            startActivityForResult(intent, StudentsRecyclerViewActivity.REQUEST_CODE_EDIT_STUDENT)
         }
 
 
         bind(student)
+
+    }
+    override
+    fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == StudentsRecyclerViewActivity.REQUEST_CODE_EDIT_STUDENT && resultCode == RESULT_OK) {
+            val student: Student? = data?.getParcelableExtra("new_student")
+            student?.let {
+                bind(it)
+            }
+            val intent = intent.apply { putExtra("updated_student", student) }
+            setResult(RESULT_OK, intent)
+            finish()
+        }
+
 
     }
 
