@@ -68,10 +68,10 @@ class EditStudent : AppCompatActivity() {
                 Model.shared.students[index] = student
             }
 
-            // Pass the updated student back to the previous activity
+
             val resultIntent = Intent().apply { putExtra("new_student", student) }
             setResult(RESULT_OK, resultIntent)
-            finish() // Close the activity
+            finish()
         }
 
         deleteButton?.setOnClickListener{

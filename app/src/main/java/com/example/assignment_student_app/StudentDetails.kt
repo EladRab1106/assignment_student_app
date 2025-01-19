@@ -41,7 +41,7 @@ class StudentDetails : AppCompatActivity() {
         @Suppress("DEPRECATION")
         val student: Student? = intent.getParcelableExtra("student")
         if (student == null) {
-            finish() // Exit if no student data is passed
+            finish()
             return
         }
         toolBar = findViewById(R.id.activity_student_details_tool_bar)

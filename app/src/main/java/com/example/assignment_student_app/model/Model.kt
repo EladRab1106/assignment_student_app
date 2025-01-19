@@ -8,9 +8,9 @@ class Model private constructor(){
     }
 
     init {
-        for (i in 0..20){
+        for (i in 0..0){
             val student=Student(
-                name = "Ben Shapiro $i",
+                name = "elad rabinovitch $i",
                 id = i.toString(),
                 AvatarUrl = "",
                 isChecked = false,
